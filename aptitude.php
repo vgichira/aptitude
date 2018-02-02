@@ -1,22 +1,11 @@
 <?php
 
-$data = file_get_contents('php://input');
+$array = (
+	'maths' => 20,
+	'biology' => 50,
+	'physics' => 30
+	);
 
-$json = json_decode($data);
-
-$userasks = $json->result->resolvedQuery;
-
-if ($userasks == "Am I elegible for helb loan?") {
-	$response = "Sure, why not?";
-}
-
-
-$response = new \stdClass();
-
-$response->speech = "";
-
-header("Content-Type: application/json");
-
-echo json_encode($response);
+echo json_encode($array);
 
 ?>
