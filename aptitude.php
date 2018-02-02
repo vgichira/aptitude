@@ -7,12 +7,16 @@ $json = json_decode($data);
 $userasks = $json->result->resolvedQuery;
 
 if ($userasks == "Am I elegible for helb loan?") {
-
-	$response = "What is your ID number, please?";
-
-	$encode = json_encode($response);
-
-	echo $encode;
+	$response = "Sure, why not?";
 }
+
+
+$response = new \stdClass();
+
+$response->speech = "";
+
+header("Content-Type: application/json");
+
+echo json_encode($response);
 
 ?>
